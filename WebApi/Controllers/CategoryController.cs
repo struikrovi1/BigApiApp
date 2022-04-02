@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Entities;
+using Entities.DTOs;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,10 +18,18 @@ namespace WebApi.Controllers
             _categoryManager = categoryManager;
         }
 
-        [HttpGet("getall")]
+        [HttpGet("getallCategory")]
         public List<Category> GetCategories()
         {
            return _categoryManager.GetAll();
+        }
+
+
+        [HttpPost("addCategory")]
+        public CategoryDTO Add(CategoryDTO category)  
+        {
+            _categoryManager.Add(category);
+            return category;
         }
 
 

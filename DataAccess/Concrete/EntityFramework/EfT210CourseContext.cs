@@ -13,7 +13,7 @@ namespace DataAccess.Concrete.EntityFramework
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=MedDB;Trusted_Connection=True;MultipleActiveResultSets=true");
+            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=BigApi;Trusted_Connection=True;MultipleActiveResultSets=true");
         }
 
         public DbSet<Category> Category { get; set; }

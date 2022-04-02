@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccess.Migrations
 {
     [DbContext(typeof(EfT210CourseContext))]
-    [Migration("20220331152832_initial")]
-    partial class initial
+    [Migration("20220331162318_webapi")]
+    partial class webapi
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

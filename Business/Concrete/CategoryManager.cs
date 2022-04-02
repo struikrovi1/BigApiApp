@@ -1,6 +1,7 @@
 ﻿using Business.Abstract;
 using DataAccess.Abstract;
 using Entities;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,9 +20,23 @@ namespace Business.Concrete
             _categoryDal = categoryDal;
         }
 
-        public void Add(Category category)
+        public void Add(CategoryDTO category)
         {
-            _categoryDal.Add(category); 
+            Category cat = new()
+            {
+                Id = category.Id,
+                Name = category.Name,
+                IsDeleted = category.IsDeleted,
+                IsFeatured = category.IsFeatured,
+                SeqNo = category.SeqNo,
+                ParentCategoryId = category.ParentCategoryId,
+                ModifiedOn = DateTime.Now,
+                PublishDate = DateTime.Now,
+
+
+            };
+            _categoryDal.Add(cat); 
+
         }
 
         public List<Category> GetAll()
